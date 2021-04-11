@@ -11,4 +11,8 @@ router.get('/',auth, (req,res)=>{
     }
 })
 
+router.get('/account', auth, (req,res)=>{
+    res.send('your account')
+})
+
 module.exports = router;

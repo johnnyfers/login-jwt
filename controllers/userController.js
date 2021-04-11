@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken')
 
 const userController = {
+    
     register: async (req, res) => {
 
         const selectUser = await User.findOne({ email: req.body.email });
@@ -21,7 +22,7 @@ const userController = {
             console.log(error);
             res.status(400).send(error)
         }
-    },
+    },    
 
     login: async (req, res) => {
         const selectUser = await User.findOne({ email: req.body.email });
