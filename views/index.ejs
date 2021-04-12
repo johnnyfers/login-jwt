@@ -1,18 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <style>
+        .login,
+        .image {
+            min-height: 100vh;
+        }
+
+        .bg-image {
+            background-image: url('https://images.wallpapersden.com/image/download/run-with-tech_a2tuZmWUmZqaraWkpJRnbW1lrWZtZWU.jpg');
+            background-size: cover;
+            background-position: center center;
+        }
+    </style>
 </head>
+
 <body>
+
+    <!--
+
+    <div class="container-md width"></div>
+
     <h1>Hello World</h1>
+
     <form method="POST" action="http://localhost:3001/user/login">
-        <input type="email" placeholder="Email" name="email" value="<%= body.email %>">
-        <input type="password" placeholder="Password" name="password" value="<%= body.password %>">
-        <button type="submit">Login</button>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Email</label>
+            <input class="form-control" type="email" placeholder="Email" name="email" value="<%= body.email %>">
+        </div>
+        <div class="mb-3">
+            <label for="formGroupExampleInput" class="form-label">Password</label>
+            <input class="form-control" type="password" placeholder="Password" name="password"value="<%= body.password %>">
+        </div>
+        <div class="f-column justify-content-center">
+        <button class="form-control" type="submit">Login</button>
         <a href="/createAccount">create an account</a>
+    </div>
     </form>
+    </div>
+-->
+
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-md-6 d-none d-md-flex bg-image"></div>
+
+            <div class="col-md-6 bg-light">
+                <div class="login d-flex align-items-center py-5">
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-10 col-xl-7 mx-auto">
+                                <h3 class="display-4">Login</h3>
+                                <p class="text-muted mb-4">Sign in with your account</p>
+                                
+                                <form method="POST" action="http://localhost:3001/user/login">
+                                    <div class="form-group mb-3">
+                                        <input type="email" placeholder="Email address"
+                                            class="form-control rounded-pill border-0 shadow-sm px-4" name="email"
+                                            value="<%= body.email %>">
+                                    </div>
+                                    
+                                    <div class="form-group mb-3">
+                                        <input type="password" placeholder="Password"
+                                            class="form-control rounded-pill border-0 shadow-sm px-4 text-primary"
+                                            name="password" value="<%= body.password %>">
+                                    </div>
+                                    
+                                    <div class="custom-control custom-checkbox mb-3">
+                                        <input id="customCheck1" type="checkbox" checked class="custom-control-input">
+                                        <label for="customCheck1" class="custom-control-label">Remember password</label>
+                                    </div>
+                                   
+                                    <button type="submit" class="btn btn-primary btn-block text-uppercase mb-2 rounded-pill shadow-sm">Sign in</button>
+                                    
+                                    <div class="text-center d-flex justify-content-between mt-4">
+                                        <p>
+                                            <a href="/createAccount" class="font-italic text-muted">
+                                                <u>Create an account</u>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
+
 </html>

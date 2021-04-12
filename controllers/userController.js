@@ -35,7 +35,7 @@ const userController = {
 
 
         res.header('auth',token)
-        res.send('User logged')
+        res.redirect('/admin/account');
     }
 
 }

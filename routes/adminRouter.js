@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const auth = require('../controllers/authController')
 
-router.get('/',auth, (req,res)=>{
+router.get('/', auth, (req,res)=>{
     
     if(req.user.admin){
     res.send('da boss')
@@ -12,7 +12,7 @@ router.get('/',auth, (req,res)=>{
 })
 
 router.get('/account', auth, (req,res)=>{
-    res.send('your account')
+    res.render('profile')
 })
 
 module.exports = router;
